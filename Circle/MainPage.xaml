@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Circle"
+             x:Class="Circle.MainPage">
+
+    <VerticalStackLayout Spacing="15" Padding="20">
+
+        <!-- Entry for Radius -->
+        <Entry x:Name="RadiusEntry"
+               Placeholder="Enter radius"
+               Keyboard="Numeric"
+               TextChanged="OnRadiusEntryChanged" />
+
+        <!-- Buttons -->
+        <HorizontalStackLayout Spacing="10">
+            <Button Text="5" Clicked="OnRadiusButtonClicked" />
+            <Button Text="10" Clicked="OnRadiusButtonClicked" />
+            <Button Text="15" Clicked="OnRadiusButtonClicked" />
+        </HorizontalStackLayout>
+
+        <!-- Slider -->
+        <Slider x:Name="RadiusSlider"
+                Minimum="0"
+                Maximum="15"
+                ValueChanged="OnSliderValueChanged" />
+
+        <!-- Simple Circle Design -->
+        <GraphicsView x:Name="CircleView"
+                      HeightRequest="200"
+                      WidthRequest="200"
+                      Drawable="{x:Static local:Circle.Instance}" />
+
+        <!-- Display Results -->
+        <Label x:Name="CircumferenceLabel" Text="Circumference: " FontSize="18" />
+        <Label x:Name="AreaLabel" Text="Area: " FontSize="18" />
+        <Label x:Name="VolumeLabel" Text="Volume: " FontSize="18" />
+
+    </VerticalStackLayout>
+
+</ContentPage>
