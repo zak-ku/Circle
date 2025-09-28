@@ -12,6 +12,12 @@
                Keyboard="Numeric"
                TextChanged="OnRadiusEntryChanged" />
 
+        <Label x:Name="ErrorLabel"
+                Text=""
+                TextColor="Red"
+                FontSize="14" />
+
+
         <!-- Buttons -->
         <HorizontalStackLayout Spacing="10">
             <Button Text="5" Clicked="OnRadiusButtonClicked" />
